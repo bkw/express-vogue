@@ -1,0 +1,17 @@
+{
+    "name" : "express-vogue",
+    "version" : "0.0.1",
+    "description" : "express.js middleware for vogue integration (live css reload)",
+    "homepage" : "http://github.com/bkw/express-vogue",
+    "keywords" : ["vogue", "css", "express", "realtime", "development"],
+    "author" : "Bernhard K. Weisshuhn <bkw@codingforce.com>",
+    "repository" : {
+        "type" : "git",
+        "url" : "http://github.com/bkw/express-vogue.git"
+    },
+    "dependencies" : {
+        "vogue" : "https://github.com/bkw/vogue/tarball/npm",
+        "socket.io" : "0.9.x"
+    },
+    "main" : "index"
+}
