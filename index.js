@@ -19,7 +19,8 @@ module.exports = function (app, options) {
     socket
         .on('connection', function (clientSocket) {
             watcher.addClient(new VogueClient(clientSocket, watcher));
-        });
+        })
+        .set('log level', 1);
 
     // return middleware:
     return function (req, res, next) {
