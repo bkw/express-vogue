@@ -1,6 +1,6 @@
 {
     "name" : "express-vogue",
-    "version" : "0.0.1",
+    "version" : "0.0.2",
     "description" : "express.js middleware for vogue integration (live css reload)",
     "homepage" : "http://github.com/bkw/express-vogue",
     "keywords" : ["vogue", "css", "express", "realtime", "development"],

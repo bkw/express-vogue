@@ -33,30 +33,21 @@ module.exports = function (app, options) {
 
         // intercept text/html output and inject script tag:
         if (! res._vogue) {
-            intercept('end');
-            intercept('write');
-            res._vogue = true;
-        }
-        next();
+            var send = res.send;
 
-        function intercept (method, filter) {
-            var orig = res[method];
-
-            res[method] = function (data, encoding) {
-                res[method] = orig;
-
-                if (
-                    this.header('content-type') &&
-                    (this.header('content-type').indexOf('text/html') === 0)
-                ) {
-                    data = data.replace(
+            res.send = function (body, headers, status) {
+                if ('string' === typeof body) {
+                    body = body.replace(
                         /<\/head>/,
                         '<script src="' +
                             prefix + '/vogue-client.js"></script></head>'
                     );
                 }
-                res[method](data, encoding);
+                this.send = send;
+                return this.send(body, headers, status);
             };
+            res._vogue = true;
         }
+        next();
     };
 };
