@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/bkw/express-vogue.png)](http://travis-ci.org/bkw/express-vogue)
 # express-vogue
 
   express.js middleware for instantly reloading css stylesheets during
